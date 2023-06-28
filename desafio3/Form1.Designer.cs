@@ -52,9 +52,12 @@
             // 
             // GrillaProductos
             // 
+            this.GrillaProductos.AllowUserToAddRows = false;
+            this.GrillaProductos.AllowUserToDeleteRows = false;
             this.GrillaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GrillaProductos.Location = new System.Drawing.Point(33, 32);
             this.GrillaProductos.Name = "GrillaProductos";
+            this.GrillaProductos.ReadOnly = true;
             this.GrillaProductos.RowHeadersWidth = 62;
             this.GrillaProductos.RowTemplate.Height = 28;
             this.GrillaProductos.Size = new System.Drawing.Size(742, 285);

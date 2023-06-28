@@ -6,19 +6,29 @@ using System.Threading.Tasks;
 
 namespace desafio3
 {
-    internal class Producto
+    public class Producto : ICloneable
     {
-        public string Id { get; set; }
+        public Id Id { get; set; }
         public string Descripcion { get; set; }
         public decimal Precio { get; set; }
         public int Stock { get; set; }
 
-        public Producto(string id="", string descripcion = "", decimal precio=0, int stock=0)
+        public Producto(Id id, string descripcion = "", decimal precio=0, int stock=0)
         {
             Id = id;
             Descripcion = descripcion;
             Precio = precio;
             Stock = stock;
+        }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
+        public Producto CloneCasteado(Producto pProducto)
+        {
+            Producto p = (Producto)pProducto.Clone();
+            return p;
         }
     }
 }

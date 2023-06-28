@@ -12,7 +12,7 @@ namespace desafio3
 {
     public partial class Form1 : Form
     {
-        List<Producto> productos;
+        List<Producto> lp = new List<Producto>();
         public Form1()
         {
             InitializeComponent();
@@ -20,7 +20,17 @@ namespace desafio3
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            productos = new List<Producto>();
+            
+        }
+        public void CargarGrilla()
+        {
+            GrillaProductos.DataSource = null;
+            GrillaProductos.DataSource = lp;
+        }
+        public void agregarProducto (Producto p)
+        {
+            lp.Add(p);
+            CargarGrilla();
         }
 
         private void btnAgregarProd_Click(object sender, EventArgs e)
